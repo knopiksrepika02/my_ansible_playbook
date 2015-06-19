@@ -1,11 +1,11 @@
 #!/bin/sh
 
-#Host
+# Host
 cat << 'EOF' > hosts
 localhost
 EOF
 
-#Host RoleList
+# RoleList
 cat << 'EOF' > ansibleRules  
 leonelgalan.node
 ANXS.python
@@ -14,7 +14,7 @@ calebwoods.brightbox_ruby
 debops.java
 EOF
 
-#Host PlayBook
+# PlayBook
 cat << 'EOF' > main.yml
 - hosts: all
   sudo: yes
@@ -25,13 +25,14 @@ cat << 'EOF' > main.yml
     - { role: calebwoods.brightbox_ruby }
     - { role: debops.java }
   tasks:
+    # DevTools
     - apt: name=w3m
-    - apt: name=language-pack-ja-base
-    - apt: name=language-pack-ja
-    - locale_gen: name=ja_JP.UTF-8
+    - apt: name=vim
+    - apt: name=git
     - npm: name=yo global=yes
     - npm: name=grunt-cli global=yes
     - gem: name=compass
+    # SNS
     - pip: name=rainbowstream
 EOF
 
