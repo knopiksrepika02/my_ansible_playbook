@@ -20,12 +20,3 @@ Ubuntu 14.10を想定。
 - Roleのinstall
 - オーケストレーション実行（LocalHostに対し実行すること前提）
 
-### TODO 
-
-- ローカライズ
-- Docker Nginx Proxy
-- 各種設定ファイルコピー
-    - vimrc
-    - bashrc
-
-
